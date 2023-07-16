@@ -1,0 +1,200 @@
+
+/* Scroll Bar */
+
+::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: var(--background-color-a-link);
+}
+
+::-webkit-scrollbar-track
+{
+    background-color: var(--background-color-waifu-info);
+}
+
+@supports (scrollbar-color: var(--background-color-a-link) var(--background-color-waifu-info))
+{
+    *
+    {
+        scrollbar-color: var(--background-color-a-link) var(--background-color-waifu-info);
+        scrollbar-width: auto;
+    }
+}
+
+/* Webkit */
+
+input::-webkit-input-placeholder
+{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+textarea::-webkit-input-placeholder
+{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+input::-moz-placeholder
+{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+textarea::-moz-placeholder
+{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+input:-ms-input-placeholder
+{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+textarea:-ms-input-placeholder
+{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/* Generic */
+
+body
+{
+    font-family: var(--font-family);
+    text-align: center;
+    background-color: var(--background-color-body);
+
+    /* Change Default */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main
+{
+    width: 90%;
+    background-color: var(--background-color-main);
+
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1
+{
+    font-size: 1.2em;
+
+    padding-bottom: 20px;
+}
+
+h2
+{
+    font-size: 1.2em;
+
+    padding-bottom: 20px;
+}
+
+h3
+{
+    font-size: 1.2em;
+
+    padding-bottom: 20px;
+}
+
+p
+{
+    font-size: 1.1em;
+
+    padding-bottom: 10px;
+}
+
+a
+{
+    font-size: 1.1em;
+    text-decoration: none;
+
+    display: block;
+}
+
+label
+{
+    font-size: 1.1em;
+}
+
+/* Form */
+
+form div
+{
+    margin-bottom: 20px;
+}
+
+form div:last-of-type
+{
+    margin-bottom: 0;
+}
+
+form div input
+{
+    width: 250px;
+    background-color: var(--background-color-form-input);
+
+    padding: 5px;
+    border: 1px solid var(--black-min);
+    border-radius: 5px;
+}
+
+/* Table */
+
+table, th, td
+{
+    padding: 10px 0;
+    border: 2px solid var(--background-color-main);
+}
+
+table
+{
+    width: 40%;
+    color: var(--background-color-main);
+    background-color: var(--background-color-a-link);
+
+    margin: auto;
+}
+
+th
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+td
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+table tbody tr td.td-selector
+{
+    padding: 0px;
+}
+
+table tbody tr td a
+{
+    text-decoration: none;
+    font-size: inherit;
+    color: var(--background-color-main);
+
+    padding: 10px 0;
+}
+
+table tbody tr td a:hover
+{
+    color: var(--black);
+    background-color: var(--white);
+}

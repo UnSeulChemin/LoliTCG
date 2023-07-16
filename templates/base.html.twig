@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <title>LoliTCG {% block title %}{% endblock %}</title>
+  	    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/favicon/favicon.png') }}">
+        {# CSS #}
+        <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+        {# JS #}
+        <script type="text/javascript" src="{{ asset('assets/js/jquery-3.6.4.min.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('assets/js/script.js') }}" defer></script>
+        {% block javascript %}{% endblock %}
+    </head>
+    <body class="light">
+
+        {# Main #}
+        <main>
+            <section id="main-section">
+                {# Navigation Security #}
+                {% include "_partials/_navigation_security.html.twig" %}
+                {# Body Content #}
+                {% block body %}{% endblock %}
+            </section>
+        </main>
+
+    </body>
+</html>

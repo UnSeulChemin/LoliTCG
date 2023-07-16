@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    <div class="div-admin">
+
+        <div class="show-users">
+            <a href="{{ path('app_admin_users') }}">Show users</a>
+        </div>
+
+        <div class="show-users">
+            <a href="{{ path('app_admin_admins') }}">Show admins</a>
+        </div>
+
+        <div class="show-admins">
+            <a href="{{ path('app_admin_datas') }}">Show datas</a>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

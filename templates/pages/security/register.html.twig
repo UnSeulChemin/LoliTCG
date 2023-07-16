@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+<section class="section-default">
+
+    <h2>Register</h2>
+
+    {{ form_start(createFormUser) }}
+
+    {# Flash Messages #}
+    {% for message in app.flashes('warning') %}
+        <div class="warning-flash">
+           {# <p>{{ message }}</p> #}
+            {{ form_errors(createFormUser.email) }}
+            {{ form_errors(createFormUser.name) }}
+            {{ form_errors(createFormUser.plainPassword) }}
+            {{ form_errors(createFormUser.agreeTerms) }}
+        </div>
+    {% endfor %}
+
+    <div>
+        {{ form_widget(createFormUser.email) }}
+    </div>
+
+    <div>
+        {{ form_widget(createFormUser.name) }}
+    </div>
+
+    <div>
+        {{ form_widget(createFormUser.plainPassword) }}
+    </div>
+
+    <div class="div-agree-term">
+        {{ form_label(createFormUser.agreeTerms) }}
+        {{ form_widget(createFormUser.agreeTerms) }}
+    </div>
+
+    <div>
+        {{ form_label(createFormUser.submit) }}
+        {{ form_widget(createFormUser.submit) }}
+    </div>
+
+    {{ form_end(createFormUser) }}
+
+</section>
+
+{% endblock %}

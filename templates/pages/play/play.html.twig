@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Play{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    <div class="main-game">
+
+        <div class="game-first-div">
+
+            {% for chapter in chapters %}
+                <div class="chapter-dialogue">
+                    <h3>{{ chapter.chapter }}</h3>
+                    <p>{{ chapter.title }}</p>
+                </div>
+            {% endfor %}
+
+            <div class="chapter-play">
+                <a href="{{ path('app_chapter') }}">Play</a>
+            </div>
+        </div>
+
+        <div class="game-second-div">
+            <div class="arena">
+                <a href="{{ path('app_home') }}">Arena</a>
+            </div>
+
+            <div class="defits">
+                <a href="{{ path('app_home') }}">Défits</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ressource-game">
+        <div class="xp">
+            <a href="{{ path('app_home') }}">xp</a>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

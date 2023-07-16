@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+<section class="section-default">
+
+    <h2>Login</h2>
+
+    <form method="post">
+
+    {# Flash Messages #}
+    {% if error %}
+        <div class="warning-flash">
+            <ul>
+                <li>Email or password not valid.</li>
+            </ul>
+        </div>
+    {% endif %}
+
+    <div>
+        <input type="email" placeholder="Email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    </div>
+
+    <div>
+        <input type="password" placeholder="Password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    </div>
+
+    <div>
+        <button id="login_form_submit" type="submit">Login</button>
+    </div>
+
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+    </form>
+
+</section>
+
+{% endblock %}

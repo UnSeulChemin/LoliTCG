@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    <h2>Edit User</h2>
+
+    {# Flash Messages #}
+    {% for message in app.flashes('warning') %}
+        <div class="warning-flash">
+            {# <p>{{ message }}</p> #}
+            {{ form_errors(updateFormUser.email) }}
+            {{ form_errors(updateFormUser.name) }}
+        </div>
+    {% endfor %}
+
+    {{ form_start(updateFormUser) }}
+
+    <div>
+        {{ form_widget(updateFormUser.email) }}
+    </div>
+
+    <div>
+        {{ form_widget(updateFormUser.name) }}
+    </div>
+
+    <div>
+        {{ form_widget(updateFormUser.roles) }}
+    </div>
+
+    <div>
+        {{ form_widget(updateFormUser.submit) }}
+    </div>    
+
+    {{ form_end(updateFormUser) }}
+
+</section>
+
+{% endblock %}

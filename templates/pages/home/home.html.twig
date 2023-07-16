@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if app.user %}
+
+    <section class="section-profil">
+        <div>
+            <div class="div-img">
+                <article id="avatar-frame">
+                    <img src="{{ asset('assets/images/frame/ww.png') }}">
+                    <img src="{{ asset('assets/images/waifu/' ~ app.user.avatar)}}" alt="{{ app.user.avatar }}"> 
+                </article>
+            </div>
+        </div>
+
+        <div class="section-profil-info">
+            <p class="bold">{{ app.user.name|capitalize }}</p>
+            <p class="bold">女</p>
+            <p class="bold">lvl {{ app.user.level }}</p>
+            <p class="bold">Silver</p>
+        </div>
+    </section>
+
+    {# Flash Messages #}
+    {% for message in app.flashes('warning-critical') %}
+    <article class="margin-top">
+        <div class="warning-flash">
+            {# <p>{{ message }}</p> #}
+            <ul>
+                <li>Your are not allowed to do this.</li>
+            </ul>
+        </div>
+    </article>
+    {% endfor %}
+
+    {# Flash Messages #}
+    {% for message in app.flashes('success') %}
+    <article class="margin-top">
+        <div class="success-flash margin-bottom-none">
+            {# <p>{{ message }}</p> #}
+            <ul>
+                <li>Your modification have been successfully done.</li>
+            </ul>
+        </div>
+    </article>
+    {% endfor %}
+
+    <section class="margin-top">
+        <div>
+            <p class="padding-bottom-none">New patch : link</p>
+        </div>
+    </section>
+    
+    <section class="mode">
+        <div class="div-img">
+            <img class="dark-mode" src="{{ asset('assets/images/theme/dark.png') }}" alt="dark-mode">
+        </div>
+    </section>
+
+{% else %}
+
+    <section class="section-default">
+        <h1>LogliTCG Homepage</h1>
+        <p>For any information contact us at : lolissr.noreply@gmail.com</p>
+        <p class="padding-bottom-none">Login your account to play.</p>
+    </section>
+
+{% endif %}
+
+{% endblock %}

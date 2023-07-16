@@ -1,0 +1,28 @@
+{% if app.user %}
+
+    <div class="flex-between">
+        <div class="flex">
+            {% if is_granted('ROLE_USER') %}
+                <a class="a-link" href="{{ path('app_home') }}">Menu</a>
+                <a class="a-link" href="{{ path('app_play') }}">Play</a>
+                <a class="a-link" href="{{ path('app_waifu') }}">Waifu</a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="a-link" href="{{ path('app_admin') }}">Admin</a>
+            {% endif %}
+        </div>
+        <div class="flex">
+            <a class="a-link" href="{{ path('app_profile') }}">Profile</a>
+            <a class="a-link" href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    </div>
+
+{% else %}
+
+    <div class="flex-center">
+        <a class="a-link" href="{{ path('app_home') }}">Home</a>
+        <a class="a-link" href="{{ path('app_register') }}">Register</a>
+        <a class="a-link" href="{{ path('app_login') }}">Login</a>
+    </div>
+    
+{% endif %}

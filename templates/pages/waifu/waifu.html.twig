@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Waifu{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    <h2>Waifu</h2>
+
+    <p>Currently on page {{ (app.request.attributes.get('number')) ? app.request.attributes.get('number') : '1' }}.</p>
+
+    {% set compteur = 0 %}
+
+    {% for waifu in waifus %}
+
+        {% if compteur == 0 %}
+
+            <div class="row-waifu">
+
+        {% endif %}
+
+                <div class="show-waifu">
+                    <a href="{{ path('app_waifu_info', { id: waifu.id }) }}">
+                        <img src="{{ asset('assets/images/waifu/' ~ waifu.name)}}" alt="{{ waifu.name }}">
+                    </a>
+                    {# <p>{{ waifu.createdAt|date('d/m/Y') }}</p> #}
+                    {# {# <a href="{{ path('app_main_loli_type', {'type': waifu.type, 'number': '1'}) }}">List Type : {{ waifu.type }}</a> #}
+                </div>
+
+                {% set compteur = compteur + 1 %}
+
+        {% if (compteur % 4 == 0 or loop.last) %}
+
+            {% set compteur = 0 %}
+
+            </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+    <div id="waifu-menu-page-navigation">
+        {{ knp_pagination_render(waifus, 'pages/waifu/waifu_paginate.html.twig') }}
+    </div>
+
+</section>
+
+{% endblock %}

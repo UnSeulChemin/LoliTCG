@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chapter{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    {% for ennemy in ennemies %}
+        
+        <div>
+            <img width="150" src="{{ asset('assets/images/ennemy/' ~ ennemy.name)}}" alt="{{ ennemy.name }}"> 
+        </div>
+
+        <div>
+            <p class="bold">{{ ennemy.waifu }}</p>
+            <p class="bold">{{ ennemy.atk }}</p>
+            <p class="bold">{{ ennemy.hp }}</p>
+        </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    <h2>Profile</h2>
+
+    {# Flash Messages #}
+    {% for message in app.flashes('success') %}
+        <div class="success-flash">
+            {# <p>{{ message }}</p> #}
+            <ul>
+                <li>Your modification have been successfully done.</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+    <div>
+        <ul>
+            <li class="margin-bottom"><a class="a-profile-link" href="{{ path('app_profile_name', { 'id': app.user.id }) }}">Edit Name</a></li>
+            <li><a class="a-profile-link" href="{{ path('app_profile_password', { 'id': app.user.id }) }}">Edit Password</a></li>
+        </ul>
+    </div>
+
+</section>
+
+{% endblock %}

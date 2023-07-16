@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admins{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    <div class="div-bonus">
+        <h3><span class="bold">Total admins :</span> {{ admins|length }}</h3>
+    </div>
+
+    {% for admin in admins %}
+
+    <div class="for-div">
+
+        <div>
+            <p><span class="bold">Email :</span> {{ admin.email }}</p>
+        </div>
+        <div>
+            <p><span class="bold">Name :</span> {{ admin.name }}</p>
+        </div>
+        <div>
+            <p><span class="bold">Role :</span> {% for role in admin.roles %} {{ role }} {% endfor %}</p>
+        </div>
+        <div>
+            <p><span class="bold">CreatedAt :</span> {{ admin.createdAt|date('d/m/Y') }}</p>
+        </div>
+        <div>
+            <p class="padding-bottom-none"><span class="bold">UpdatedAt :</span> {{ admin.updatedAt|date('d/m/Y') }}</p>
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+:root
+{
+    /* Font */
+    --font-family: 'Montserrat', 'Open Sans', sans-serif;
+
+    /* Color */
+    --background-color-body: #cbf6db;
+    --background-color-main: #aed6dc;
+    --background-color-a-link: #4a536b;
+    --background-color-form-input: #f5f5ef;
+    --background-color-waifu-border: #F5F5DC;
+    --background-color-waifu-info: #6495ED;
+    --background-color-success-flash: #32CD32;
+    --background-color-warning-flash: #DC143C;
+    --white: #ffffff;
+    --black-min: #333333;
+    --black: #000000;
+}

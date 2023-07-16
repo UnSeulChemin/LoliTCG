@@ -1,0 +1,59 @@
+{% if pageCount > 1 %}
+
+<nav aria-label="Pagination">
+
+    <ul class="pagination">
+
+        {# Previous #}
+        {% if previous is defined %}
+            <li><a rel="prev" href="{{ path('app_waifu_page', {'number': previous}) }}">-</a></li>
+        {% else %}
+            <li style="display: none;"><a class="disabled">-</a></li>
+        {% endif %}
+
+        {# StartPage #}
+        {% if startPage > 1 %}
+            <li><a href="{{ path('app_waifu_page', {'number': 1}) }}">1</a></li>
+
+            {% if startPage == 3 %}
+                <li><a href="{{ path('app_waifu_page', {'number': 2}) }}">2</a></li>
+            {% elseif startPage != 2 %}
+                <li class="ellipsis"></li>
+            {% endif %}
+
+        {% endif %}
+
+        {# Page #}
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                <li><a href="{{ path('app_waifu_page', {'number': page}) }}">{{ page }}</a></li>
+            {% else %}
+                {# <li class="current">{{ page }}</li> #}
+            {% endif %}
+        {% endfor %}
+
+        {# PageCount #}
+        {% if pageCount > endPage %}
+            {% if pageCount > (endPage + 1) %}
+                {% if pageCount > (endPage + 2) %}
+                    <li class="ellipsis"></li>
+                {% else %}
+                    <li><a href="{{ path('app_waifu_page', {'number': pageCount - 1}) }}">{{ pageCount -1 }}</a></li>
+                {% endif %}
+            {% endif %}
+                   
+            <li><a href="{{ path('app_waifu_page', {'number': pageCount}) }}">{{ pageCount }}</a></li>
+        {% endif %}
+
+        {# Next #}
+        {% if next is defined %}
+            <li><a rel="next" href="{{ path('app_waifu_page', {'number': next}) }}">+</a></li>
+        {% else %}
+            <li style="display: none;" class="disabled">+</li>
+        {% endif %}
+
+    </ul>
+
+</nav>
+
+{% endif %}

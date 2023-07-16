@@ -1,0 +1,33 @@
+@media only screen and (max-width: 1201px)
+{
+    /* Class */
+
+    .row-waifu-info
+    {
+        display: inline-block;
+    }
+
+    .row-waifu-info .show-waifu-info
+    {
+        width: auto;
+
+        border-right: 0;
+    }
+
+    .row-waifu-info .show-waifu-text
+    {
+        width: auto;
+    }
+
+    .row-waifu-info .show-waifu-text p:first-of-type
+    {
+        border-top: 1px solid var(--background-color-main);
+    }
+
+    /* Home, Avatar Frame */
+
+    #avatar-frame img:first-of-type
+    {
+        display: none;
+    }
+}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Name{% endblock %}
+
+{% block body %}
+
+<section class="section-content">
+
+    <h2>Edit Name</h2>
+
+    {{ form_start(updateNameFormUser) }}
+
+    {# Flash Messages #}
+    {% for message in app.flashes('warning') %}
+        <div class="warning-flash">
+            {# <p>{{ message }}</p> #}
+            {{ form_errors(updateNameFormUser.name) }}
+        </div>
+    {% endfor %}
+
+    {# Flash Messages #}
+    {% for message in app.flashes('warning-password') %}
+        <div class="warning-flash">
+            {# <p>{{ message }}</p> #}
+            <ul>
+                <li>Password error.</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+    <div>
+        {{ form_widget(updateNameFormUser.name) }}
+    </div>
+
+    <div>
+        {{ form_widget(updateNameFormUser.oldPassword) }}
+    </div>
+
+    <div>
+        {{ form_widget(updateNameFormUser.submit) }}
+    </div>
+
+    {{ form_end(updateNameFormUser) }}
+
+</section>
+
+{% endblock %}

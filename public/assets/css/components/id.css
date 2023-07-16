@@ -1,0 +1,175 @@
+
+/* Global */
+
+#main-section
+{
+    padding: 20px 25px 25px 25px;
+    border: 2px solid var(--black-min);
+}
+
+/* Register, Login */
+
+#registration_form_submit
+{
+    cursor: pointer;
+    width: 120px;
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    color: var(--background-color-main);
+    background-color: var(--background-color-a-link);
+
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+#registration_form_submit:hover
+{
+    opacity: 0.9;
+    color: var(--black);
+}
+
+#login_form_submit
+{
+    cursor: pointer;
+    width: 120px;
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    color: var(--background-color-main);
+    background-color: var(--background-color-a-link);
+
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+#login_form_submit:hover
+{
+    opacity: 0.9;
+    color: var(--black);
+}
+
+/* Edit Name, Edit Password */
+
+#user_edit_name_form_submit
+{
+    cursor: pointer;
+    width: 120px;
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    color: var(--background-color-main);
+    background-color: var(--background-color-a-link);
+
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+#user_edit_name_form_submit:hover
+{
+    opacity: 0.9;
+    color: var(--black);
+}
+
+#user_edit_password_form_submit
+{
+    cursor: pointer;
+    width: 120px;
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    color: var(--background-color-main);
+    background-color: var(--background-color-a-link);
+
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+#user_edit_password_form_submit:hover
+{
+    opacity: 0.9;
+    color: var(--black);
+}
+
+/* Edit User */
+
+#user_edit_form_submit
+{
+    cursor: pointer;
+    width: 120px;
+    font-size: 1.1em;
+    font-family: var(--font-family);
+    color: var(--background-color-main);
+    background-color: var(--background-color-a-link);
+
+    padding: 8px;
+    border: none;
+    border-radius: 5px;    
+}
+
+#user_edit_form_submit:hover
+{
+    opacity: 0.9;
+    color: var(--black);
+}
+
+/* Waifu Menu Page Nagivation */
+
+#waifu-menu-page-navigation
+{
+    margin-top: 20px;
+}
+
+#waifu-menu-page-navigation nav ul
+{
+    display: flex;
+    align-items: center;
+}
+
+#waifu-menu-page-navigation nav ul li
+{
+    margin-right: 10px;
+}
+
+#waifu-menu-page-navigation nav ul li:last-of-type
+{
+    margin-right: 0;
+}
+
+#waifu-menu-page-navigation nav ul li a
+{
+    color: var(--background-color-main);
+    background-color: var(--background-color-a-link);
+
+    padding: 5px 10px;
+    border: 2px solid var(--black-min);
+    border-radius: 10px;
+}
+
+#waifu-menu-page-navigation nav ul li a:hover
+{
+    color: var(--black);
+    background-color: var(--white);
+}
+
+/* Home, Avatar Frame */
+
+#avatar-frame
+{
+    position: relative;
+}
+
+#avatar-frame img:first-of-type
+{
+    width: 145%;
+    height: auto;
+
+    position: absolute;
+    bottom: -50px;
+    left: -75px;
+}
+
+#avatar-frame img:last-of-type
+{
+    border-radius: 50%;
+}
