@@ -75,6 +75,18 @@
         display: none;
     }
 
+    /* Global */
+
+    p
+    {
+        font-size: 16px;
+    }
+
+    a
+    {
+        font-size: 16px;
+    }
+
     /* Form */
 
     form div input

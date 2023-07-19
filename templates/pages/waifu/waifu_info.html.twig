@@ -24,8 +24,9 @@
         </div>
     </div>
 
-    <div class="margin-top">
+    <div class="flex margin-top">
         <a class="a-validate" href="{{ path('app_waifu_info_set_avatar', { 'id': waifu.id }) }}">Set Avatar</a>
+        <a class="a-validate" href="{{ asset('assets/images/waifu/' ~ waifu.name)}}" download="{{ waifu.waifu }}">Download</a>
     </div>
 
 </section>
